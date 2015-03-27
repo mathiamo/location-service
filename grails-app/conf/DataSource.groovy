@@ -2,7 +2,7 @@ dataSource {
     pooled = true
     driverClassName = "org.postgresql.Driver"
     dialect = "org.hibernate.dialect.PostgreSQLDialect"
-    URI = new URI(System.getenv("DB_URL"))
+    uri = new URI(System.getenv("DB_URL"))
     username = uri.userInfo.split(":")[0]
     password = uri.userInfo.split(":")[1]
 
