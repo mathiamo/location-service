@@ -2,9 +2,10 @@ dataSource {
     pooled = true
     driverClassName = "org.postgresql.Driver"
     dialect = "org.hibernate.dialect.PostgreSQLDialect"
+    URI = new URI(System.getenv("DB_URL"))
+    username = uri.userInfo.split(":")[0]
+    password = uri.userInfo.split(":")[1]
 
-    username = "${DB_USR}"
-    password = "${DB_PSW}"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -20,19 +21,19 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "${DB_URL}"
+            url = "jdbc:mysql://"+uri.host+":"+uri.port+uri.path
         }
     }
     test {
         dataSource {
             dbCreate = "update"
-            url = "${DB_URL}"
+            url = "jdbc:mysql://"+uri.host+":"+uri.port+uri.path
         }
     }
     production {
         dataSource {
             dbCreate = "update"
-            url = "${DB_URL}"
+            url = "jdbc:mysql://"+uri.host+":"+uri.port+uri.path
         }
     }
 }
