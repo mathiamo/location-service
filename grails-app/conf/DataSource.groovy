@@ -5,7 +5,6 @@ dataSource {
 
     username = "${DB_USR}"
     password = "${DB_PSW}"
-
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -22,21 +21,18 @@ environments {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "${DB_URL}"
-
         }
     }
     test {
         dataSource {
             dbCreate = "update"
             url = "${DB_URL}"
-
         }
     }
     production {
         dataSource {
             dbCreate = "update"
             url = "${DB_URL}"
-
         }
     }
 }
