@@ -21,19 +21,19 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://"+uri.host+":"+uri.port+uri.path
+            url = "jdbc:postgresql://"+uri.host+":"+uri.port+uri.path
         }
     }
     test {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://"+uri.host+":"+uri.port+uri.path
+            url = "jdbc:postgresql://"+uri.host+":"+uri.port+uri.path
         }
     }
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://"+uri.host+":"+uri.port+uri.path
+            url = "jdbc:postgresql://"+uri.host+":"+uri.port+uri.path
         }
     }
 }
