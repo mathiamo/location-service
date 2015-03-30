@@ -20,8 +20,8 @@ environments {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             uri = new URI(System.getenv("DB_URL"))
             url = "jdbc:postgresql://"+uri.host+":"+uri.port+uri.path
-            username = uri.getUserInfo().split(":")[0]
-            password = uri.getUserInfo().split(":")[1]
+            username = uri.userInfo().split(":")[0]
+            password = uri.userInfo().split(":")[1]
         }
     }
     test {
@@ -29,8 +29,8 @@ environments {
             dbCreate = "update"
             uri = new URI(System.getenv("DB_URL"))
             url = "jdbc:postgresql://"+uri.host+":"+uri.port+uri.path
-            username = uri.getUserInfo().split(":")[0]
-            password = uri.getUserInfo().split(":")[1]
+            username = uri.userInfo().split(":")[0]
+            password = uri.userInfo().split(":")[1]
         }
     }
     production {
@@ -38,8 +38,8 @@ environments {
             dbCreate = "update"
             uri = new URI(System.getenv("DB_URL"))
             url = "jdbc:postgresql://"+uri.host+":"+uri.port+uri.path
-            username = uri.getUserInfo().split(":")[0]
-            password = uri.getUserInfo().split(":")[1]
+            username = uri.userInfo().split(":")[0]
+            password = uri.userInfo().split(":")[1]
         }
     }
 }
